@@ -18,37 +18,11 @@ class Game
     @board = board
   end
 
-  # def current_player
-  #   if @board.turn_count % 2 == 0
-  #     player_1
-  #   else
-  #     player_2
-  #   end
-  # end
 
   def current_player
     @board.turn_count % 2 == 0 ? player_1 : player_2
   end
 
-  # def won?
-  #   WIN_COMBINATIONS.each do |win_combination|
-  #
-  #       win_index_1 = win_combination[0]
-  #       win_index_2 = win_combination[1]
-  #       win_index_3 = win_combination[2]
-  #
-  #       position_1 = board.cells[win_index_1]
-  #       position_2 = board.cells[win_index_2]
-  #       position_3 = board.cells[win_index_3]
-  #
-  #         if position_1 == "X" && position_2 == "X" && position_3 == "X"
-  #             return win_combination
-  #          elsif position_1 == "O" && position_2 == "O" && position_3 == "O"
-  #             return win_combination
-  #         end
-  #     end
-  #     false
-  # end
 
   def won?
     WIN_COMBINATIONS.find do |winner|
@@ -57,15 +31,6 @@ class Game
       (@board.cells[winner[0]] == "X" || @board.cells[winner[0]] == "O")
     end
   end
-
-
-  # def draw?
-  #     if board.full? == false
-  #       false
-  #     elsif won? == false
-  #       true
-  #     end
-  # end
 
   def draw?
     board.full? && !won?
@@ -84,26 +49,6 @@ class Game
   def over?
     draw? || won?
   end
-
-  # def winner
-  #   WIN_COMBINATIONS.each do |win_combination|
-  #
-  #     win_index_1 = win_combination[0]
-  #     win_index_2 = win_combination[1]
-  #     win_index_3 = win_combination[2]
-  #
-  #     position_1 = board.cells[win_index_1]
-  #     position_2 = board.cells[win_index_2]
-  #     position_3 = board.cells[win_index_3]
-  #
-  #     if position_1 == "X" && position_2 == "X" && position_3 == "X"
-  #       return "X"
-  #     elsif position_1 == "O" && position_2 == "O" && position_3 == "O"
-  #       return "O"
-  #     end
-  #   end
-  #   return nil
-  # end
 
   def winner
     if wincombo = won?
@@ -131,5 +76,4 @@ class Game
       puts "Cat's Game!"
     end
   end
-
 end
