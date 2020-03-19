@@ -4,4 +4,3 @@
       gets.strip
     end
   end
-end
