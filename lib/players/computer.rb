@@ -1,4 +1,3 @@
-module Players
   class Computer < Player
     def move(board)
       computer_move = rand(0..9)
