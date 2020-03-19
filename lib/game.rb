@@ -36,16 +36,6 @@ class Game
     board.full? && !won?
   end
 
-
-  # def over?
-  #   if draw?
-  #     true
-  #   elsif won?
-  #     true
-  #   else false
-  #   end
-  # end
-
   def over?
     draw? || won?
   end
@@ -76,4 +66,3 @@ class Game
       puts "Cat's Game!"
     end
   end
-end
