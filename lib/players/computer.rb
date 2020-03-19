@@ -7,4 +7,3 @@
        return computer_move.to_s
     end
   end
-end
